@@ -1,0 +1,239 @@
+{
+ "started_utc": "2026-11-08T22:15:17Z",
+ "python": "3.13.18 (main, Oct 26 2026, 14:08:19) [Clang 23.1.3 ]",
+ "platform": "Linux-6.18.44-fc-v310-x86_64-with-glibc2.39",
+ "cpu_count": 2,
+ "args": {
+  "processed": "/home/claude/real/processed",
+  "out": "/home/claude/real/results",
+  "config": "configs/study.yaml",
+  "stride": 1,
+  "sub_stride": 2,
+  "soc_stride": 16,
+  "jobs": 1,
+  "only": "sens",
+  "nav_models": null,
+  "sens_keys": "offpeak_scale,demand_scale,cancel_penalty,gamma,mitigation",
+  "tag": "_sensB",
+  "context_lead": null
+ },
+ "n_test": 304,
+ "n_main": 304,
+ "n_sub": 152,
+ "nav_navB_seconds": 951.3,
+ "nav_navB_rows": 2736,
+ "finished_utc": "2026-11-08T22:30:32Z",
+ "calls": [
+  {
+   "args": {
+    "processed": "/home/claude/real/processed",
+    "out": "/home/claude/real/results",
+    "config": "configs/study.yaml",
+    "stride": 1,
+    "sub_stride": 1,
+    "soc_stride": 25,
+    "jobs": 1,
+    "only": "soc",
+    "nav_models": null,
+    "sens_keys": null,
+    "tag": "",
+    "context_lead": null
+   },
+   "started_utc": "2026-11-08T21:26:58Z"
+  }
+ ],
+ "soc_eps_rule": "eps_t = f * expected societal risk in hour t of the unconstrained RF plan (decision-time scenarios)",
+ "soc_n_scen": 10,
+ "soc_fracs": [
+  null,
+  1.0,
+  0.5,
+  0.25,
+  0.1
+ ],
+ "soc_time_limit_s": 60,
+ "soc_formulation": "strict open-lane curve formulation (model/societal.py); certified gap from min(own dual bound, time-sharing relaxation optimum bound)",
+ "soc_seconds": 1835.1,
+ "soc_rows": 130,
+ "sens_sensB_seconds": 913.6,
+ "sens_sensB_rows": 4560,
+ "stage_logs": {
+  "run_log_lead2.json": {
+   "started_utc": "2026-11-08T18:58:40Z",
+   "python": "3.13.18 (main, Oct 26 2026, 14:08:19) [Clang 23.1.3 ]",
+   "platform": "Linux-6.18.44-fc-v310-x86_64-with-glibc2.39",
+   "cpu_count": 2,
+   "args": {
+    "processed": "/home/claude/real/processed",
+    "out": "/home/claude/real/results",
+    "config": "configs/study.yaml",
+    "stride": 1,
+    "sub_stride": 1,
+    "soc_stride": 16,
+    "jobs": 2,
+    "only": "main",
+    "tag": "_lead2",
+    "context_lead": 2
+   },
+   "n_test": 304,
+   "n_main": 304,
+   "n_sub": 304,
+   "main_R1_lead2_seconds": 188.6,
+   "main_R1_lead2_rows": 2432,
+   "main_R2_lead2_seconds": 313.7,
+   "main_R2_lead2_rows": 2432
+  },
+  "run_log_navA.json": {
+   "started_utc": "2026-11-08T21:10:32Z",
+   "python": "3.13.18 (main, Oct 26 2026, 14:08:19) [Clang 23.1.3 ]",
+   "platform": "Linux-6.18.44-fc-v310-x86_64-with-glibc2.39",
+   "cpu_count": 2,
+   "args": {
+    "processed": "/home/claude/real/processed",
+    "out": "/home/claude/real/results",
+    "config": "configs/study.yaml",
+    "stride": 1,
+    "sub_stride": 2,
+    "soc_stride": 16,
+    "jobs": 1,
+    "only": "nav",
+    "nav_models": "E1-precise,E2-measured",
+    "sens_keys": null,
+    "tag": "_navA",
+    "context_lead": null
+   },
+   "n_test": 304,
+   "n_main": 304,
+   "n_sub": 152,
+   "nav_navA_seconds": 702.4,
+   "nav_navA_rows": 2736
+  },
+  "run_log_navB.json": {
+   "started_utc": "2026-11-08T21:10:33Z",
+   "python": "3.13.18 (main, Oct 26 2026, 14:08:19) [Clang 23.1.3 ]",
+   "platform": "Linux-6.18.44-fc-v310-x86_64-with-glibc2.39",
+   "cpu_count": 2,
+   "args": {
+    "processed": "/home/claude/real/processed",
+    "out": "/home/claude/real/results",
+    "config": "configs/study.yaml",
+    "stride": 1,
+    "sub_stride": 2,
+    "soc_stride": 16,
+    "jobs": 1,
+    "only": "nav",
+    "nav_models": "E3-degraded,E4-KimBae",
+    "sens_keys": null,
+    "tag": "_navB",
+    "context_lead": null
+   },
+   "n_test": 304,
+   "n_main": 304,
+   "n_sub": 152,
+   "nav_navB_seconds": 951.3,
+   "nav_navB_rows": 2736
+  },
+  "run_log_sensA.json": {
+   "started_utc": "2026-11-08T21:58:01Z",
+   "python": "3.13.18 (main, Oct 26 2026, 14:08:19) [Clang 23.1.3 ]",
+   "platform": "Linux-6.18.44-fc-v310-x86_64-with-glibc2.39",
+   "cpu_count": 2,
+   "args": {
+    "processed": "/home/claude/real/processed",
+    "out": "/home/claude/real/results",
+    "config": "configs/study.yaml",
+    "stride": 1,
+    "sub_stride": 2,
+    "soc_stride": 16,
+    "jobs": 1,
+    "only": "sens",
+    "nav_models": null,
+    "sens_keys": "base,lambda_f,theta_G,theta_A,ped_density",
+    "tag": "_sensA",
+    "context_lead": null
+   },
+   "n_test": 304,
+   "n_main": 304,
+   "n_sub": 152,
+   "sens_sensA_seconds": 1685.5,
+   "sens_sensA_rows": 5472
+  },
+  "run_log_sensB.json": {
+   "started_utc": "2026-11-08T22:15:17Z",
+   "python": "3.13.18 (main, Oct 26 2026, 14:08:19) [Clang 23.1.3 ]",
+   "platform": "Linux-6.18.44-fc-v310-x86_64-with-glibc2.39",
+   "cpu_count": 2,
+   "args": {
+    "processed": "/home/claude/real/processed",
+    "out": "/home/claude/real/results",
+    "config": "configs/study.yaml",
+    "stride": 1,
+    "sub_stride": 2,
+    "soc_stride": 16,
+    "jobs": 1,
+    "only": "sens",
+    "nav_models": null,
+    "sens_keys": "offpeak_scale,demand_scale,cancel_penalty,gamma,mitigation",
+    "tag": "_sensB",
+    "context_lead": null
+   },
+   "n_test": 304,
+   "n_main": 304,
+   "n_sub": 152,
+   "sens_sensB_seconds": 913.6,
+   "sens_sensB_rows": 4560
+  }
+ },
+ "note": "Experiments were run in stages (run_staged.sh); per-stage logs under stage_logs. The frontier (soc) was re-run after finding A11; the earlier frontier output was discarded.",
+ "stage_timings_from_console": {
+  "main_R1": {
+   "rows": 2432,
+   "seconds": 195
+  },
+  "main_R2": {
+   "rows": 2432,
+   "seconds": 325
+  },
+  "main_R1_lead2": {
+   "rows": 2432,
+   "seconds": 189
+  },
+  "main_R2_lead2": {
+   "rows": 2432,
+   "seconds": 314
+  },
+  "nav_navA": {
+   "rows": 2736,
+   "seconds": 702
+  },
+  "nav_navB": {
+   "rows": 2736,
+   "seconds": 951
+  },
+  "dyn": {
+   "rows": 9120,
+   "seconds": 677
+  },
+  "rob": {
+   "rows": 1216,
+   "seconds": 173
+  },
+  "comp": {
+   "rows": 43,
+   "seconds": 1024
+  },
+  "soc": {
+   "rows": 130,
+   "seconds": 838
+  },
+  "sens_sensA": {
+   "rows": 5472,
+   "seconds": 1685
+  },
+  "sens_sensB": {
+   "rows": 4560,
+   "seconds": 914
+  }
+ },
+ "total_experiment_seconds": 7987
+}

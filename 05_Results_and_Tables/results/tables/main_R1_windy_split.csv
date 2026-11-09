@@ -1,0 +1,13 @@
+windy_day,policy,mean_diff_obj_vs_SeasonalSAA,ci_lo,ci_hi,n_days
+False,RF,0.0,0.0,0.0,294
+False,kNN,0.0,0.0,0.0,294
+False,SAA,0.0,0.0,0.0,294
+False,Deterministic,-0.7074829931972789,-1.9727891156462585,0.0,294
+False,Robust90,-7.795918367346939,-11.918707482993197,-4.136054421768708,294
+False,Static,0.0,0.0,0.0,294
+True,RF,0.0,0.0,0.0,10
+True,kNN,0.0,0.0,0.0,10
+True,SAA,0.0,0.0,0.0,10
+True,Deterministic,62.4,0.0,168.0,10
+True,Robust90,6.0,-64.8,82.8,10
+True,Static,0.0,0.0,0.0,10

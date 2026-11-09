@@ -1,0 +1,5 @@
+model,a1_ref_m,a2_m,alpha,a1z_m,a2z_m,alpha_z,basis
+E1-precise,0.7495331880577404,5.0,0.001,0.16690410034766703,3.0,0.001,"core = lowest measured lateral TSE RMS (1.06 m, Geister et al. 2018); light tail"
+E2-measured,2.4748737341529163,20.0,0.01,0.16690410034766703,5.0,0.01,core = mid-range measured RMS (~3.5 m); tail scale ~ largest observed NSE (20 m); 1 % tail
+E3-degraded,4.242640687119285,30.0,0.02,0.33380820069533407,10.0,0.02,"core = upper trial-1 RMS (6 m); heavier, wider tail (urban multipath, gusts)"
+E4-KimBae,5.340931211125345,= S_y,0.05,0.16690410034766703,5.0,0.05,"Kim & Bae (2022): KASS 16 m 95 % core, tail scale = S_y, tail weight 0.05"

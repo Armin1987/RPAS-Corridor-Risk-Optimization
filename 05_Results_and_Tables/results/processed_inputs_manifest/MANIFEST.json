@@ -1,0 +1,34 @@
+{
+ "acquisition_log.jsonl": {
+  "sha256": "8ec96fd364d378fbf937c9b87b8f35f999e6da981f65957f136b9cb965c56252",
+  "bytes": 1807
+ },
+ "grid_meta.json": {
+  "sha256": "b4a8f7e9dc86f306c686d266045c562715df80cc65e31a3962c6656b7a4529ac",
+  "bytes": 211
+ },
+ "osm_buildings.geojson": {
+  "sha256": "e3fb8dac99ca5cdc61d2011da5349dbc691c404c7e168ad7eca1145c5c510961",
+  "bytes": 9350224
+ },
+ "pneuma_cell_vehicle_seconds_by_drone.csv.gz": {
+  "sha256": "8e6ac9b5cbd167769d92e2622e255d61394565fdd576518ecc51a7aaa7247205",
+  "bytes": 1635592
+ },
+ "pneuma_file_inventory.csv": {
+  "sha256": "083914f7e719a8c012d55c1a754004f1cf93937ed1e16a63d5cd8b0d77e5e5fe",
+  "bytes": 17554
+ },
+ "wind_dayahead_previous_runs_ecmwf_ifs025.csv": {
+  "sha256": "a4879b0aa0e51e96f0fe7e3245235b708c0c41bf0fcee9c7fce6d304574261a6",
+  "bytes": 1301866
+ },
+ "wind_era5_reanalysis.csv": {
+  "sha256": "d1e48c7bf2688d3a2412f5c1339684fdebb71e875247850a8f137bd4b4deba37",
+  "bytes": 889667
+ },
+ "wind_historical_forecast_ecmwf_ifs025.csv": {
+  "sha256": "d6faf35ebd83341dec5bcecb597aab1ffbf756fdb16c90f7259a672f168065c4",
+  "bytes": 875672
+ }
+}

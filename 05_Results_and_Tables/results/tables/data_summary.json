@@ -1,0 +1,104 @@
+{
+ "dev_synthetic": false,
+ "grid_rows": 119,
+ "grid_cols": 90,
+ "cell_m": 20.0,
+ "r0": -8,
+ "c0": -18,
+ "lat0": 37.975,
+ "lon0": 23.725,
+ "date_slots": 4,
+ "osm_buildings": true,
+ "covered_area_km2": 1.6092,
+ "building_share_in_coverage": 0.5053442704449416,
+ "weather_days_complete": 969,
+ "train_first_day": "2024-03-07",
+ "train_last_day": "2025-12-31",
+ "test_first_day": "2026-01-01",
+ "test_last_day": "2026-10-31",
+ "grid_point": {
+  "lat": "38.0",
+  "lon": "23.75"
+ },
+ "train_days": 665,
+ "test_days": 304,
+ "weather_days_incomplete": 1,
+ "skill_train": {
+  "bias_ms": -0.965267857142857,
+  "mae_ms": 1.525361842105263,
+  "rmse_ms": 1.9181313671720515,
+  "corr": 0.7456229325455054,
+  "n_hours": 10640
+ },
+ "skill_test": {
+  "bias_ms": -1.1845949835526315,
+  "mae_ms": 1.6353926809210524,
+  "rmse_ms": 2.0298799883908742,
+  "corr": 0.7829733627442157,
+  "n_hours": 4864
+ },
+ "realised_meta": {
+  "latitude": "38.0",
+  "longitude": "23.75",
+  "elevation": "100.0",
+  "utc_offset_seconds": "7200",
+  "timezone": "Europe/Athens",
+  "timezone_abbreviation": "GMT+2"
+ },
+ "forecast_meta": {
+  "latitude": "38.0",
+  "longitude": "23.75",
+  "elevation": "100.0",
+  "utc_offset_seconds": "7200",
+  "timezone": "Europe/Athens",
+  "timezone_abbreviation": "GMT+2"
+ },
+ "pneuma_files": 100,
+ "pneuma_dates": [
+  "20181024",
+  "20181029",
+  "20181030",
+  "20181101"
+ ],
+ "pneuma_duration_min_s": 543.8,
+ "pneuma_duration_max_s": 1032.2,
+ "pneuma_vehicles_total": 238664,
+ "exposure_fit": "dev date-slots only (fit and freeze); testA/testB held out",
+ "pneuma_sets": [
+  {
+   "set": "dev",
+   "files": 40,
+   "dates": [
+    "20181029",
+    "20181030"
+   ],
+   "slots": [
+    "0830",
+    "0900"
+   ]
+  },
+  {
+   "set": "testA",
+   "files": 40,
+   "dates": [
+    "20181024",
+    "20181101"
+   ],
+   "slots": [
+    "0830",
+    "0900"
+   ]
+  },
+  {
+   "set": "testB",
+   "files": 20,
+   "dates": [
+    "20181029",
+    "20181030"
+   ],
+   "slots": [
+    "1000"
+   ]
+  }
+ ]
+}
