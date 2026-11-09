@@ -1,0 +1,11 @@
+# Versions used to run the tests in the authoring workspace (2026-11-07)
+numpy==2.5.3
+scipy==1.18.1      # scipy.optimize.milp -> HiGHS (open source MILP solver)
+pandas==3.0.5
+scikit-learn==1.9.1
+matplotlib==3.11.2
+pyyaml==6.0.3
+requests==2.34.2
+pytest==9.1.1
+# Optional in Colab (not installed in the authoring workspace; package installs were blocked):
+# pyomo, highspy  -> alternative modelling layer, same HiGHS solver

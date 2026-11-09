@@ -1,0 +1,64 @@
+# Every parameter carries a provenance tag:
+#   VERIFIED   - checked against the cited primary source in Stage 2
+#   LITERATURE - from a published study, citation to be verified in Stage 3/8
+#   ASSUMED    - research/engineering assumption; must be varied in sensitivity analysis
+#   DATA       - estimated from the named dataset in Stage 4 (placeholder value here)
+
+platform:            # DJI Matrice 300 RTK, DJI support page (retrieved 2026-11-07)
+  mass:  {dist: uniform, low: 6.3, high: 9.0, unit: kg, tag: VERIFIED, note: "6.3 kg with two TB60 batteries; 9 kg MTOW"}
+  dims_m: {L: 0.810, W: 0.670, H: 0.430, wheelbase: 0.895, tag: VERIFIED}
+  v_max_s: {value: 23.0, unit: m/s, tag: VERIFIED, note: "S mode; P mode 17 m/s"}
+  v_descent_max: {value: 5.0, unit: m/s, tag: VERIFIED, note: "vertical, S mode; 7 m/s tilted"}
+  wind_max: {value: 12.0, unit: m/s, tag: VERIFIED, note: "max wind resistance"}
+  hover_acc_gps_h: {value: 1.5, unit: m, tag: VERIFIED, note: "+/-, P-mode GPS, no RTK"}
+  hover_acc_rtk_h: {value: 0.1, unit: m, tag: VERIFIED}
+  cd:    {dist: normal, mean: 0.6, sd: 0.15, min: 0.2, tag: ASSUMED}
+  area:  {dist: normal, mean: 0.15, sd: 0.03, min: 0.05, unit: m2, tag: ASSUMED}
+  vx0:   {dist: normal, mean: 15.0, sd: 2.0, min: 0.0, unit: m/s, tag: ASSUMED, note: "cruise; <= 17 m/s P mode"}
+  vz0:   {dist: uniform, low: 0.0, high: 5.0, unit: m/s, tag: ASSUMED, note: "bounded by verified max descent"}
+  h0:    {dist: normal, mean: 120.0, sd: 5.0, min: 60.0, unit: m, tag: ASSUMED}
+
+reich:
+  lam_x: {value: 0.895, unit: m, tag: ASSUMED, note: "wheelbase-based size; propeller span to be added in Stage 3"}
+  lam_y: {value: 0.895, unit: m, tag: ASSUMED}
+  lam_z: {value: 0.430, unit: m, tag: VERIFIED}
+  V:     {value: 15.0, unit: m/s, tag: ASSUMED}
+  dV:    {value: 1.0, unit: m/s, tag: ASSUMED}
+  ydot:  {value: 1.0, unit: m/s, tag: ASSUMED}
+  zdot:  {value: 0.1, unit: m/s, tag: ASSUMED}
+  nav:
+    a1_0:   {value: 0.50, unit: m, tag: ASSUMED, note: "1.5 m GPS hover accuracy read as a 95% bound / ln 20; placeholder until Stage 3 fixes NSE+FTE"}
+    beta_a: {value: 0.10, unit: s, tag: ASSUMED, note: "core-scale growth per m/s of wind"}
+    a1_x:   {value: 0.50, unit: m, tag: ASSUMED}
+    a1_z:   {value: 0.17, unit: m, tag: ASSUMED, note: "0.5 m vertical hover accuracy / ln 20"}
+    a2:     {value: 20.0, unit: m, tag: ASSUMED, note: "gross-error tail"}
+    a2_z:   {value: 10.0, unit: m, tag: ASSUMED}
+    alpha:  {value: 0.01, tag: ASSUMED}
+
+safety:
+  theta_G: {value: 1.0e-6, unit: "fatalities per aircraft flight hour", tag: ASSUMED,
+            note: "research criterion used by Kim & Bae (2022); not a regulatory requirement"}
+  theta_A: {value: 1.0e-6, unit: "collision involvements per aircraft flight hour", tag: ASSUMED}
+  lambda_f: {value: 1.0e-5, unit: "loss-of-control events per flight hour", tag: ASSUMED,
+             note: "literature range 1e-6..1e-4 per Kim & Bae (2022); scenario parameter"}
+
+harm:
+  model: dalamagkidis
+  alpha_J: {value: 1.0e6, tag: LITERATURE}
+  beta_J:  {value: 100.0, tag: LITERATURE}
+  r_person: {value: 0.3, unit: m, tag: LITERATURE}
+  h_person: {value: 1.8, unit: m, tag: LITERATURE}
+
+grid:
+  cell_m: 20.0
+operations:
+  hours: [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+  blocks: [[7, 10], [11, 14], [15, 18], [19, 22]]
+  max_switches: 2
+  value_per_flight: 1.0
+  cancel_penalty: 2.0       # ASSUMED (relative to value 1)
+  switch_cost: 5.0          # ASSUMED
+demand:                     # SYNTHETIC - never presented as observed
+  tag: ASSUMED
+  daily_requests: 1200
+  hourly_profile: "two-peak, see Stage 4"
